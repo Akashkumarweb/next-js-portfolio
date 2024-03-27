@@ -3,31 +3,396 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --violet: #BB86FC;
+  --robin: #03DAC6;
+  --eerie-black: #1E1E1E;
+  --gainsboro: #DDDDDD;
+  --chinese-black: #121212;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+
+/* Fonts */
+.poppins {
+  font-family: "Poppins", sans-serif;
+  font-display: swap;
+}
+
+.fontawesome {
+  font-family: "Font Awesome 6 Pro";
+}
+
+/* Base Styles */
+html {
+  line-height: 1;
+  font-family: "Poppins", sans-serif;
+  font-display: swap;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  scroll-padding-top: 125px;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--chinese-black);
+  color: var(--gainsboro);
+  scroll-padding-top: 125px;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@media only screen and (max-width: 550px) {
+  body {
+    scroll-padding-top: 70px;
   }
+}
+
+/* @media only screen and (max-width: 550px) {
+  main {
+    margin-top: 0px;
+  }
+} */
+
+h1 {
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Poppins", sans-serif;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: var(--gainsboro);
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+b,
+strong {
+  font-weight: 600;
+}
+
+main {
+  padding-top: 100px;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 0 25px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+@media only screen and (max-width: 550px) {
+  .wrapper {
+    padding: 0 20px;
+  }
+}
+
+.wrapper--full {
+  max-width: 2000px;
+}
+
+.wrapper--short {
+  max-width: 1200px;
+}
+
+
+/* Header Styles */
+.header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 20px;
+  align-items: center;
+  padding: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header--scrolled {
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #FFFFFF;
+}
+
+.header--active {
+  transform: translateY(0);
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+@media (max-width: 769px) {
+  .header__container {
+    display: none;
+  }
+
+  .header {
+    background: #121212;
+  }
+}
+
+.nav {
+  display: none;
+}
+
+@media (min-width: 769px) {
+
+  .nav {
+    display: block;
+  }
+}
+
+.nav__list {
+  display: flex;
+  font-size: 1.5em;
+  gap: 20px;
+}
+
+.sec-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.sec-head__h {
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+.sec-head__p {
+  font-size: 0.9em;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header-social {
+  font-size: 2em;
+  display: flex;
+  gap: 20px;
+}
+
+
+
+
+
+/* Add your custom styles here */
+.nav-mob {
+  /* position: fixed; */
+  top: 0;
+  right: 0;
+  width: 100%;
+  display: block;
+}
+
+/* Mobile navigation styles */
+@media (min-width: 769px) {
+  .nav-mob {
+    display: none;
+  }
+}
+
+
+/* .nav-mob-container {
+  background: linear-gradient(315deg, #b1bfd8 0%, #667eaa 74%);
+} */
+
+/* .nav-mob-wrapper {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+.hamburger {
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
+  right: 20px;
+  position: absolute;
+  top: 30px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &::before {
+    transform: translateY(-10px);
+  }
+
+  &::after {
+    transform: translateY(10px);
+  }
+}
+
+.activeHamburger {
+  width: 30px;
+  height: 3px;
+  border-radius: 5px;
+  transform: translateX(-50px);
+  background: transparent;
+  transition: all 0.5s ease-in-out;
+  right: 20px;
+  position: absolute;
+  top: 30px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &::before {
+    transform: rotate(45deg) translate(35px, -35px);
+  }
+
+  &::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+  }
+}
+
+.sidenav {
+  /* position: fixed; */
+  width: 100%;
+  height: 100vh;
+  background: black;
+  transform: translateX(100%);
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  padding: 40px 20px;
+}
+
+.activeSidenav {
+  /* position: fixed; */
+  width: 100%;
+  height: 100vh;
+  background: black;
+  transform: translateX(50%);
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  padding: 40px 20px;
+}
+
+.mob-ul li {
+  font-size: 1.3em;
+  margin-bottom: 20px;
+}
+
+
+/* styles/global.css */
+.text-gradient {
+  background: linear-gradient(90deg, #BB86FC 0%, #03DAC6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.portfolio::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: 0;
+  top: 10%;
+  right: 15%;
+  filter: blur(150px);
+}
+
+.portfolio::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: 0;
+  bottom: 15%;
+  left: 10%;
+  filter: blur(150px);
+}
+
+/* Assuming your base styles are defined, add these for the glassmorphism effect */
+.portfolio-card {
+  background: rgba(255, 255, 255, 0.1);
+  /* Semi-transparent background */
+  backdrop-filter: blur(10px);
+  /* Blur effect on the background */
+  border-radius: 15px;
+  /* Rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  /* Light border for depth */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
+}
+
+/* Hover effect to enhance interactivity */
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  /* Slight lift */
+  transition: all 0.3s ease;
 }
