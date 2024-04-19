@@ -1,12 +1,29 @@
 "use client";
 import React from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import Image from 'next/image'
+import { useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import Image from 'next/image';
 
-
+const imageVariants = {
+    floating: {
+        y: ["-5%", "5%"],
+        transition: {
+            y: {
+                repeat: Infinity,
+                repeatType: "mirror",
+                duration: 5,
+                ease: "easeInOut"
+            }
+        }
+    }
+};
 
 const Hero = () => {
+    const controls = useAnimation();
+
+    useEffect(() => {
+        controls.start("floating");
+    }, [controls]);
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: { opacity: 1, transition: { duration: 1.5 } },
@@ -41,34 +58,36 @@ const Hero = () => {
                                 </motion.h1>
                             </hgroup>
                         </header>
-                        <h3 className="text-xl mb-10">Web Specialist based in London</h3>
-                        <p className="mb-10">As an experienced web developer and designer, I am dedicated to
-                            creating digital experiences
-                            that make a lasting impact. My unique approach weaves technology with a touch of creativity,
-                            resulting in websites that
-                            not only meet expectations but consistently exceed them.</p>
+                        <h2 className="text-xl mb-10">London based web developer and designer</h2>
+                        <p className="mb-10">With over 5 years of experience, I specialize in creating digital experiences that not only meet expectations but consistently exceed them. My custom web design services and development expertise ensure your project stands out in the vibrant London tech scene.</p>
                         <div className="grid grid-cols-3 gap-4 mb-10">
-                            <div className="text-center">
-                                <h4 className="text-2xl">5+ Years</h4>
+                            <div>
+                                <h3 className="text-2xl">5+ Years</h3>
                                 <p>Experience</p>
                             </div>
-                            <div className="text-center">
+                            {/* <div className="text-center">
                                 <h4 className="text-2xl">99.8%</h4>
                                 <p>Satisfaction</p>
-                            </div>
-                            <div className="text-center">
+                            </div> */}
+                            {/* <div>
                                 <h4 className="text-2xl">50+</h4>
                                 <p>Clients</p>
-                            </div>
+                            </div> */}
                         </div>
-                        <div className="text-center">
+                        {/* <div className="text-center">
                             <Link href="#contact">
                                 <p className="bg-gray-800 text-white py-3 px-6">Contact Me!</p>
                             </Link>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="w-full md:w-1/2 px-4">
-                        <Image src={'/images/hero-image.png'} alt="Akash Kumar" width={600} height={1000} />
+                        <motion.div
+                            className="image-container"
+                            variants={imageVariants}
+                            animate={controls}
+                        >
+                            <Image src={'https://ctfmcoptba.cloudimg.io/images/hero-image-akash.webp'} alt="Akash Kumar" width={600} height={1000} priority />
+                        </motion.div>
                     </div>
                 </div>
             </motion.section>

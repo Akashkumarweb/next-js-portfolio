@@ -6,7 +6,7 @@ const SkillCarousel = () => {
         <div
             className="bg-purple-800 text-white text-center p-4" >
             <p className="text-2xl md:text-3xl font-bold">
-                Crafting digital experiences that connect and inspire
+                Connecting and Inspiring Through Custom Web Design and Development
             </p>
         </div>
     );

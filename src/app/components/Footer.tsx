@@ -9,10 +9,10 @@ const Footer = () => {
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <p>&copy; {currentYear} Webdevakash. All rights reserved.</p>
         <div className="flex mt-4 md:mt-0">
-          <a href="https://www.linkedin.com/in/theakashkumar/" target="_blank" rel="noopener noreferrer" className="text-white p-2">
+          <a href="https://www.linkedin.com/in/theakashkumar/" target="_blank" rel="noopener noreferrer" aria-label="linkedin profile" className="text-white p-2">
             <FaLinkedin size="24" />
           </a>
-          <a href="https://github.com/Akashkumarweb" target="_blank" rel="noopener noreferrer" className="text-white p-2">
+          <a href="https://github.com/Akashkumarweb" target="_blank" rel="noopener noreferrer" aria-label="github profile" className="text-white p-2">
             <FaGithub size="24" />
           </a>
         </div>

@@ -6,7 +6,7 @@ import Image from 'next/image';
 const testimonials = [
     {
         id: 'content1',
-        img: "/images/testimonial/Vince-Stevenson.jpeg",
+        img: "https://ctfmcoptba.cloudimg.io/images/testimonial/Vince-Stevenson.jpeg?width=56&height=56",
         altquote: "Vince Stevenson",
         name: "Vince Stevenson",
         role: "Trainer of Trainers and Executive Speech Coach",
@@ -14,7 +14,7 @@ const testimonials = [
     },
     {
         id: 'content2',
-        img: "/images/testimonial/prashant-sutar.jpeg",
+        img: "https://ctfmcoptba.cloudimg.io/images/testimonial/prashant-sutar.webp?width=56&height=56",
         altquote: "Prashant Suthar",
         name: "Prashant Suthar",
         role: "CEO & Founder Crawlmagic",
@@ -22,7 +22,7 @@ const testimonials = [
     },
     {
         id: 'content4',
-        img: "/images/testimonial/dummy-image.jpeg",
+        img: "https://ctfmcoptba.cloudimg.io/images/testimonial/dummy-image.jpeg?width=56&height=56",
         altquote: "David Cole",
         name: "David Cole",
         role: "David Cole - CEO Netrix",
@@ -30,7 +30,7 @@ const testimonials = [
     },
     {
         id: 'content5',
-        img: "/images/testimonial/Anthony-Seminara.jpeg",
+        img: "https://ctfmcoptba.cloudimg.io/images/testimonial/Anthony-Seminara.jpeg?width=56&height=56",
         altquote: "Anthony Seminara",
         name: "Anthony Seminara",
         role: "Creative Manager at Tempdent Recruitment & Training",
@@ -44,7 +44,11 @@ export default function Testimonials() {
     return (
         <section className="bg-gradient-to-r from-slate-900 to-slate-700 font-inter antialiased pt-12 pb-12 md:pt-20 md:pb-20" id="testimonials">
             <div className="wrapper max-w-6xl mx-auto px-4">
-                <h1 className="text-center text-2xl md:text-4xl font-semibold my-8">Testimonials</h1>
+                <header className="sec-head text-center mb-12">
+                    <h2 className="sec-head__h text-4xl font-bold">Testimonials - What Clients Say About Me</h2>
+                    <p className="text-gray-400">Client Feedback That Speaks Volumes</p>
+                </header>
+
                 <div className="flex flex-col items-center md:flex-row md:space-x-4">
                     <div className="flex justify-center md:justify-start flex-wrap">
                         {testimonials.map((testimonial) => (
@@ -64,7 +68,7 @@ export default function Testimonials() {
                     </div>
                     <AnimatePresence mode="wait">
                         {testimonials.filter((testimonial) => testimonial.id === activeId).map((testimonial) => (
-                            <motion.div key={testimonial.id}
+                            <motion.blockquote key={testimonial.id}
                                 initial={{ opacity: 0, x: 50 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -50 }}
@@ -73,7 +77,7 @@ export default function Testimonials() {
                             >
                                 <h2 className="text-lg md:text-xl font-bold mb-2">{testimonial.quote}</h2>
                                 <p className="text-gray-300 text-xs md:text-sm">- {testimonial.name}, {testimonial.role}</p>
-                            </motion.div>
+                            </motion.blockquote>
                         ))}
                     </AnimatePresence>
                 </div>

@@ -1,20 +1,45 @@
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Script from 'next/script'
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: {
-    default: "Akash Kumar: Expert Web Developer & UI/UX Designer | London",
-    template: "%s - Web Dev Akash | Akash Kumar "
+export const metadata = {
+  metadataBase: new URL('https://webdevakash.com/'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': '/en-US',
+    },
   },
-  description: "Discover cutting-edge web development and UI/UX design by Akash Kumar, London’s leading expert. Dive into a portfolio that merges innovation with aesthetics, leveraging HTML, CSS, React Js, and Next Js. Elevate your brand with Akash's bespoke digital solutions.",
+  openGraph: {
+    title: "Akash Kumar | Top Freelance Web Developer & UI/UX Designer in London",
+    description: "Elevate your online presence with Akash Kumar, London's seasoned freelance Web Developer and UI/UX Designer. Discover bespoke web solutions that blend innovation with aesthetic design, using technologies like HTML, CSS, React.js, and Next.js.", // OG Description
+    images: [
+      {
+        url: 'https://webdevakash.com/images/hero-image.png',
+        width: 1200,
+        height: 630,
+        alt: "Akash Kumar's Portfolio - Web Development and UI/UX Design",
+      },
+    ],
+    type: 'website',
+    url: 'https://webdevakash.com/',
+    site_name: "Akash Kumar's Web Development Portfolio",
+  },
+  title: "Akash Kumar | Expert Web Developer & UI/UX Designer in London",
+  description: "Akash Kumar, London's web developer and UI/UX designer. Expert in web web optimisation and bespoken website development.",
   twitter: {
-    card: "summary_large_image"
-  }
+    cardType: 'summary_large_image',
+    site: '@YourTwitterHandle',
+    title: "Akash Kumar | London's Premier Web Developer & UI/UX Designer",
+    description: "Unlock your brand's potential with custom web solutions by Akash Kumar. Specializing in responsive design and user-engaging interfaces.",
+    image: 'https://webdevakash.com/images/hero-image.png',
+    imageAlt: "Explore Akash Kumar's Portfolio - Innovation meets aesthetics in web development and design.",
+  },
 };
+
 
 export default function RootLayout({
   children,
@@ -23,18 +48,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-4KVF2Q6Q6V"></Script>
-        <Script id="google-analytics">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-4KVF2Q6Q6V');
-          `}
-        </Script>
-      </head>
       <body className={inter.className}>{children}</body>
+      <GoogleAnalytics gaId="G-4KVF2Q6Q6V" />
     </html>
   );
 }

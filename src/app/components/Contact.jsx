@@ -1,7 +1,7 @@
 "use client"
 import Head from 'next/head';
 import { motion } from 'framer-motion';
-import { FiMail } from 'react-icons/fi'; 
+import { FiMail } from 'react-icons/fi';
 import { FaLinkedinIn } from 'react-icons/fa';
 
 const contactMethods = [
@@ -45,7 +45,7 @@ const Contact = () => {
         initial="hidden"
         animate="visible"
       >
-        <h1 className="text-4xl text-white font-bold mb-8">Contact Me</h1>
+        <h2 className="text-4xl text-white font-bold mb-8">Contact Me</h2>
         <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {contactMethods.map((method) => (
             <motion.a

@@ -3,7 +3,7 @@ const skillsData = [
         id: 'html-css',
         iconSrc: '/images/skills/1.png',
         title: 'HTML/CSS',
-        description: 'Proficient in writing clean, semantic HTML and CSS code to create visually appealing and responsive web layouts.'
+        description: 'Keep as is, but maybe add a sentence about the importance of these skills for creating responsive web designs and dynamic user experiences.'
     },
     {
         id: 'javascript',

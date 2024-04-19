@@ -62,7 +62,7 @@ const Work = () => {
                 <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-10" variants={containerVariants}>
                     <ServiceBox
                         title="Web Development"
-                        description="As an experienced web developer, I skillfully design and create dynamic and functional websites that provide users with a seamless and enjoyable experience."
+                        description="As a professional web developer in London, I skillfully craft dynamic, functional, and responsive websites. Specializing in eCommerce web development and custom solutions, my work is tailored to elevate your digital presence."
                         imgSrc="/images/Web-Developer.png"
                         alt="Web Developer"
                         variants={itemVariants}
@@ -76,7 +76,7 @@ const Work = () => {
                     />
                     <ServiceBox
                         title="Web Consultant"
-                        description="Navigating the digital landscape can be tricky. I'm here to guide you through, ensuring your online presence is not just seen but felt."
+                        description="As a digital agency expert and web consultant in London, I guide you through the evolving digital landscape, ensuring your online presence is impactful and far-reaching."
                         imgSrc="/images/Web-Consultant.png"
                         alt="Web Consultant"
                         variants={itemVariants}

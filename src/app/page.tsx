@@ -3,9 +3,9 @@ import Hero from '@/app/components/Hero'
 import SkillCarousel from '@/app/components/SkillCarousel'
 import Work from '@/app/components/Work'
 import Header from '@/app/components/Header/Header'
-import Portfolio from '@/app/components/Portfolio'
 import Skills from '@/app/components/Skills/Skills'
 import Testimonials from '@/app/components/Testimonials'
+import Project from '@/app/components/Portfolio'
 import Contact from './components/Contact'
 import './globals.css'
 
@@ -23,7 +23,8 @@ export default function Home() {
         <SkillCarousel />
         <Work />
         <Skills />
-        <Portfolio />
+        {/* <Portfolio /> */}
+        <Project />
         <Testimonials />
         <Contact />
         <Footer />
